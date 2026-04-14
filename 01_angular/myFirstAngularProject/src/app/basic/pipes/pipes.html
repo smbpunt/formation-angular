@@ -1,0 +1,112 @@
+<h3>Les pipes Angular</h3>
+
+<h4>1- Pipes sur les chaines</h4>
+<p>Donnée brute : <b>{{ nom }}</b></p>
+
+<table>
+  <tr>
+    <td>uppercase</td>
+    <td>{{ nom | uppercase }}</td>
+    <td><i>Tout en majuscule</i></td>
+  </tr>
+  <tr>
+    <td>lowercase</td>
+    <td>{{ nom | lowercase }}</td>
+    <td><i>Tout en minuscule</i></td>
+  </tr>
+  <tr>
+    <td>titlecase</td>
+    <td>{{ nom | titlecase }}</td>
+    <td><i>Première lettre de chaque mot en majuscule</i></td>
+  </tr>
+</table>
+
+
+<h4>2- Pipes sur les nombres</h4>
+<p>Donnée brute : <b>{{ price }}</b>et <b>{{ percent }}</b> (%)</p>
+
+<table>
+  <tr>
+    <td>number</td>
+    <td>{{ price | number }}</td>
+    <td><i>Par défaut</i></td>
+  </tr>
+  <tr>
+    <td>number:'1.2-2'</td>
+    <td>{{ price | number:'1.2-2' }}</td>
+    <td><i>1 entier min., 2 décimales min/max</i></td>
+  </tr>
+  <tr>
+    <td>currency:'EUR'</td>
+    <td>{{ price | currency:'EUR' }}</td>
+    <td><i>Devise</i></td>
+  </tr>
+  <tr>
+    <td>currency:'USD':'symbol':'1.0-0'</td>
+    <td>{{ price | currency:'USD':'symbol':'1.0-0' }}</td>
+    <td><i>Dollar sans décimale</i></td>
+  </tr>
+  <tr>
+    <td>percent</td>
+    <td>{{ percent | percent }}</td>
+    <td><i>Pourcentage sans décimale</i></td>
+  </tr>
+  <tr>
+    <td>percent:'1.1-2'</td>
+    <td>{{ percent | percent:'1.1-2' }}</td>
+    <td><i>Pourcentage 1 entier min, 1-2 (min-max) décimales</i></td>
+  </tr>
+</table>
+
+<h4>3- Pipes sur les dates</h4>
+<p>Donnée brute : <b>{{ now }}</b></p>
+
+<table>
+  <tr>
+    <td>date</td>
+    <td>{{ now | date }}</td>
+    <td><i>Par défaut</i></td>
+  </tr>
+  <tr>
+    <td>date:'short'</td>
+    <td>{{ now | date:'short' }}</td>
+    <td><i>Format court</i></td>
+  </tr>
+  <tr>
+    <td>date:'fullDate'</td>
+    <td>{{ now | date:'fullDate' }}</td>
+    <td><i>Format complet</i></td>
+  </tr>
+  <tr>
+    <td>date:'dd/MM/yyyy'</td>
+    <td>{{ now | date:'dd/MM/yyyy' }}</td>
+    <td><i>Format personnalisé</i></td>
+  </tr>
+  <tr>
+    <td>date:'dd MMM yyyy'</td>
+    <td>{{ now | date:'dd MMM yyyy' }}</td>
+    <td><i>Format personnalisé</i></td>
+  </tr>
+  <tr>
+    <td>date:'dd MMMM yyyy'</td>
+    <td>{{ now | date:'dd MMMM yyyy' }}</td>
+    <td><i>Format personnalisé</i></td>
+  </tr>
+  <tr>
+    <td>date:'HH:mm:ss'</td>
+    <td>{{ now | date:'HH:mm:ss' }}</td>
+    <td><i>Format personnalisé</i></td>
+  </tr>
+</table>
+
+<h4>4- Pipes JSON</h4>
+<p>Donnée brute : <b>{{ utilisateur }}</b></p>
+
+<pre>{{ utilisateur | json }}</pre>
+
+
+<h4>5- Pipes slice (portion de tableau)</h4>
+<p>Donnée brute : <b>{{ utilisateur.prix_nobel }}</b></p>
+<p>slice:0:1 {{ utilisateur.prix_nobel|slice:0:1 }}</p>
+<p>slice:1:2 {{ utilisateur.prix_nobel|slice:1:2 }}</p>
+<p>slice:2 {{ utilisateur.prix_nobel|slice:2 }}</p>

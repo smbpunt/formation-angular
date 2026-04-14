@@ -9,6 +9,7 @@ import { ComputedSignals } from './computed-signals/computed-signals';
 import { Pipes } from './pipes/pipes';
 import { ProduitsParent } from './produits-parent/produits-parent';
 import { TpPanier } from './tp-panier/tp-panier';
+import { OutputEvent } from './output-event/output-event';
 
 @Component({
   selector: 'app-basic',
@@ -23,6 +24,7 @@ import { TpPanier } from './tp-panier/tp-panier';
     Pipes,
     ProduitsParent,
     TpPanier,
+    OutputEvent,
   ],
   templateUrl: './basic.html',
   styleUrl: './basic.scss',
@@ -41,8 +43,9 @@ export class Basic {
     'Pipes',
     'Produits-parent',
     'tp-panier',
+    'output-event',
   ];
-  protected selectedComposant: string = this.composants[8];
+  protected selectedComposant: string = this.composants[9];
 
   protected onAction(): void {
     this.message = `Bonjour ${this.username} !`;

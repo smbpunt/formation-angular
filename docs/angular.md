@@ -7,4 +7,5 @@ tsc -v
 ## Questions
 
 - Rythme des mises à jour d'Angular ? Des recommandations ?
-- Des outils de contrôle qualité à intégrer (linter, analyse statique, test...) ? 
+- Des outils de contrôle qualité à intégrer (linter, analyse statique, test...) ?
+- Des blogs / chaînes YouTube à suivre pour se tenir au courant des principales mises à jour et évolutions Angular ?

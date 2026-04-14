@@ -1,0 +1,11 @@
+<h3>Output Event (Communication enfant -> Parent)</h3>
+
+<app-vote-enfant (voted)="onVoteReceived($event)" />
+
+<div>
+  <h4>Résultat :</h4>
+  <p>Pour: {{ pour() }}</p>
+  <p>Contre: {{ contre() }}</p>
+  <p>Abstention : {{ abstention() }}</p>
+  <p>Nombre de votes : {{ nbVote() }}</p>
+</div>

@@ -1,0 +1,42 @@
+<div class="panier">
+  <h4 class="panier__title">🛒 Mini Panier d'Achat</h4>
+
+  <table class="panier__table">
+    <thead>
+    <tr>
+      <th>Produit</th>
+      <th>Prix unitaire</th>
+      <th>Quantité</th>
+      <th>Sous-total</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (c of cart; track c.product.ref) {
+        <tr>
+          <td class="panier__product">{{ c.product.label }}</td>
+          <td class="panier__price">{{ c.product.price | currency: 'EUR' }}</td>
+          <td class="panier__qty">
+            <button type="button" class="qty-btn" (click)="updateCart($index, '-')">−</button>
+            <span class="qty-value">{{ c.quantity() }}</span>
+            <button type="button" class="qty-btn" (click)="updateCart($index, '+')">+</button>
+          </td>
+          <td class="panier__price">{{ c.subtotal() | currency: 'EUR' }}</td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="4">Panier vide</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="panier__summary">
+    <p>Total : <strong>{{ total() | currency: 'EUR' }}</strong></p>
+    @if (hasDiscount()) {
+      <p class="panier__discount">
+        🎉 Remise de {{ discountRate | percent }} appliquée (total > {{ discountThreshold | currency: 'EUR' }})
+      </p>
+    }
+    <p>Total après remise : <strong>{{ totalAfterDiscount() | currency: 'EUR' }}</strong></p>
+  </div>
+</div>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { PreferenceService } from '../../service/preference-service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {}
+export class Header {
+  title = input.required<string>();
+  preference = inject(PreferenceService);
+}

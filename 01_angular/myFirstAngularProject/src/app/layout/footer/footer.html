@@ -1,3 +1,9 @@
 <footer>
   <p>&copy; Formation Angular</p>
+  <label>Choisir couleur :</label>
+  <select [(ngModel)]="preference.selectedBackgroundColor">
+    @for (color of preference.CSS_COLOR_NAMES | keyvalue; track $index) {
+      <option [value]="color.value">{{ color.key }}</option>
+    }
+  </select>
 </footer>

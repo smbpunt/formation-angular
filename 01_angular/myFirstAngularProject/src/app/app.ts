@@ -6,11 +6,11 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Basic, Header, Footer, RouterOutlet],
+  imports: [Header, Footer, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Le titre de mon app Angular');
+  readonly title = signal('Le titre de mon app Angular');
   // title: string = 'Ma première app Angular';
 }

@@ -10,6 +10,12 @@
       <li class="crumb">
         <a routerLink="/basic" routerLinkActive="active">Basic</a>
       </li>
+      <li class="crumb">
+        <a routerLink="/bonjour/bob" routerLinkActive="active">Bonjour</a>
+      </li>
+      <li class="crumb">
+        <a routerLink='/bye' [queryParams]="{prenom: 'bob'}">Bye</a>
+      </li>
     </ol>
   </nav>
 </header>

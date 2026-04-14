@@ -1,0 +1,24 @@
+<h3>Produits</h3>
+
+<ul>
+  @for (c of categories; track c) {
+    <li (click)="onClickCategory(c)">{{ c }}</li>
+  }
+</ul>
+
+<br>
+<label>Category : </label>
+<select [(ngModel)]="selectedCategory" (change)="onSelectCategory()">
+  @for (c of categories; track c) {
+    <option [ngValue]="c">{{ c }}</option>
+  }
+</select>
+
+@if (selectedCategory) {
+  <p>Liste des produits filtrés ({{ selectedCategory }}) : </p>
+  <ul>
+    @for (p of filteredProducts; track p.ref) {
+      <li>{{ p.label }}</li>
+    }
+  </ul>
+}

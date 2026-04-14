@@ -1,0 +1,48 @@
+<div>
+  <h2>calculatrice</h2>
+
+  <label>a :</label>
+  <input type="number" [(ngModel)]="a" />
+  <label>b : </label>
+  <input type="number" [(ngModel)]="b" />
+  <br> <br>
+  <label>opération :</label>
+  <input type="button" value="add" (click)="onCalculer('+')"> <br>
+  <input type="button" value="min" (click)="onCalculer('-')"> <br>
+  <input type="button" value="multi" (click)="onCalculer('*')"> <br>
+
+  @if (res != 0) {
+    <div>
+      Résultat :
+      <p [style.font-weight]="res > 10 ? 'bold':'normal'">{{ res }}</p>
+    </div>
+  }
+
+  <input type="checkbox" [(ngModel)]="showHistory" /> Montrer historique
+
+  @if (showHistory) {
+    <h2>Historique des calculs : </h2>
+
+    <ul>
+      @for (h of history; track h) {
+        <li>
+          {{ h }}
+        </li>
+      }
+    </ul>
+  }
+
+
+  <div
+    class="c2"
+    (mousemove)="onMouseMove($event)"
+    (mouseleave)="onMouseLeave()">
+    Zone à survoler à la souris.
+    <br>
+    x = {{ x }}, y = {{ y }}
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<h2>Choisir une couleur pour les nombres au carré</h2>
+
+<label>Couleur :</label>
+<select [(ngModel)]="choosenColor">
+  @for (c of listeCouleurs; track c) {
+    <option [ngValue]="c">{{ c }}</option>
+  }
+</select>
+
+<br>
+
+<label>Nombre : </label>
+<input type="number" [(ngModel)]="newNumber">
+
+<br>
+
+<input type="button" value="Ajouter" (click)="addAuCarre()">
+
+<h2>Qq valeurs au carré</h2>
+<table [style.border]="'1px solid ' + choosenColor">
+  <thead>
+  <tr>
+    <th scope="col">i</th>
+    <th scope="col">i*i</th>
+    <th scope="col">actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    @for (n of auCarre; track $index) {
+      <tr>
+        <th scope="row">{{ n }}</th>
+        <td>{{ n * n }}</td>
+        <td>
+          <button type="button" (click)="delete($index)">-</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

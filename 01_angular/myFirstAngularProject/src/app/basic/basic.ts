@@ -45,7 +45,7 @@ export class Basic {
     'tp-panier',
     'output-event',
   ];
-  protected selectedComposant: string = this.composants[9];
+  protected selectedComposant: string = this.composants[2];
 
   protected onAction(): void {
     this.message = `Bonjour ${this.username} !`;

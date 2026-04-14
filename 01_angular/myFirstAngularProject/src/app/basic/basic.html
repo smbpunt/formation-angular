@@ -1,18 +1,45 @@
 <h2>Basic </h2>
 
-<!--<p>Yooooooooooo</p>-->
 
-<!--<div>-->
-<!--  Username : <input [(ngModel)]="username" )] /> <br />-->
-<!--</div>-->
+<div>
+  Username : <input [(ngModel)]="username" /> <br />
+</div>
 
-<!--<div>-->
-<!--  <button (click)="onAction()">Dire "Bonjour" !</button>-->
-<!--  <div>-->
-<!--    message: <b [style.color]="colorMessage">{{ message }}</b>-->
-<!--  </div>-->
-<!--</div>-->
-<!--<app-calculatrice></app-calculatrice>-->
-<!--<app-couleur></app-couleur>-->
-<!--<app-produits></app-produits>-->
-<app-tva></app-tva>
+<div>
+  <button (click)="onAction()">Dire "Bonjour" !</button>
+  <div>
+    message: <b [style.color]="colorMessage">{{ message }}</b>
+  </div>
+</div>
+
+<!-- Ligne de séparation-->
+<hr />
+
+<label>Composants : </label>
+<select [(ngModel)]="selectedComposant" >
+  @for (c of composants; track c) {
+    <option [ngValue]="c">{{ c }}</option>
+  }
+</select>
+
+@switch (selectedComposant) {
+  @case ('Calculatrice') {
+    <app-calculatrice></app-calculatrice>
+  }
+  @case ('Couleur') {
+    <app-couleur></app-couleur>
+  }
+  @case ('Produits') {
+    <app-produits></app-produits>
+  }
+  @case ('TVA') {
+    <app-tva></app-tva>
+  }
+  @case ('Signals') {
+    <app-signals></app-signals>
+  }
+  @default {
+    <p>Veuillez sélectionner un composant</p>
+  }
+}
+

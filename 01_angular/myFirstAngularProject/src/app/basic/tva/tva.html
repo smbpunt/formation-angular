@@ -1,0 +1,13 @@
+<h3>TVA</h3>
+
+<label>Prix : </label>
+<input type="text" [(ngModel)]="price" (change)="updateTva()"> €
+<br>
+<br>
+@for (t of availableTva; track t) {
+  <input type="checkbox" id="{{t}}" name="{{t}}" [checked]="t === selectedTva" (change)="onSelectTva(t)" />
+  <label for="{{t}}">{{ t }} %</label>
+}
+
+<p>Prix après TVA : </p>
+{{ priceAfterTva }} €

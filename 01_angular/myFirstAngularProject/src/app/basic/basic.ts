@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { Produits } from './produits/produits';
 import { Tva } from './tva/tva';
 import { Signals } from './signals/signals';
+import { ComputedSignals } from './computed-signals/computed-signals';
+import { Pipes } from './pipes/pipes';
 
 @Component({
   selector: 'app-basic',
-  imports: [Couleur, Calculatrice, Produits, Tva, FormsModule, Signals],
+  imports: [Couleur, Calculatrice, Produits, Tva, FormsModule, Signals, ComputedSignals, Pipes],
   templateUrl: './basic.html',
   styleUrl: './basic.scss',
 })
@@ -16,8 +18,16 @@ export class Basic {
   message: string = 'Bonjour AMU';
   colorMessage: string = 'red';
   username: string = '';
-  protected composants: string[] = ['Couleur', 'Calculatrice', 'Produits', 'TVA', 'Signals'];
-  protected selectedComposant: string = this.composants[0];
+  protected composants: string[] = [
+    'Couleur',
+    'Calculatrice',
+    'Produits',
+    'TVA',
+    'Signals',
+    'Computed-signals',
+    'Pipes',
+  ];
+  protected selectedComposant: string = this.composants[6];
 
   protected onAction(): void {
     this.message = `Bonjour ${this.username} !`;

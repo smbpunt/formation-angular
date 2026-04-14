@@ -16,7 +16,7 @@
 <hr />
 
 <label>Composants : </label>
-<select [(ngModel)]="selectedComposant" >
+<select [(ngModel)]="selectedComposant">
   @for (c of composants; track c) {
     <option [ngValue]="c">{{ c }}</option>
   }
@@ -37,6 +37,12 @@
   }
   @case ('Signals') {
     <app-signals></app-signals>
+  }
+  @case ('Computed-signals') {
+    <app-computed-signals></app-computed-signals>
+  }
+  @case ('Pipes') {
+    <app-pipes></app-pipes>
   }
   @default {
     <p>Veuillez sélectionner un composant</p>

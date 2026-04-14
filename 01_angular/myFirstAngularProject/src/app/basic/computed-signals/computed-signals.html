@@ -1,0 +1,13 @@
+<h3>Computed Signals TVA</h3>
+
+<label>Prix HT :</label>
+<input type="number" [(ngModel)]="prixHT" />
+<br />
+
+<label>TVA (%) :</label>
+<input type="number" [(ngModel)]="tva" />
+<br />
+
+<div>
+  {{ prixTTC() }}
+</div>

@@ -7,10 +7,21 @@ import { Tva } from './tva/tva';
 import { Signals } from './signals/signals';
 import { ComputedSignals } from './computed-signals/computed-signals';
 import { Pipes } from './pipes/pipes';
+import { ProduitsParent } from './produits-parent/produits-parent';
 
 @Component({
   selector: 'app-basic',
-  imports: [Couleur, Calculatrice, Produits, Tva, FormsModule, Signals, ComputedSignals, Pipes],
+  imports: [
+    Couleur,
+    Calculatrice,
+    Produits,
+    Tva,
+    FormsModule,
+    Signals,
+    ComputedSignals,
+    Pipes,
+    ProduitsParent,
+  ],
   templateUrl: './basic.html',
   styleUrl: './basic.scss',
 })
@@ -26,8 +37,9 @@ export class Basic {
     'Signals',
     'Computed-signals',
     'Pipes',
+    'Produits-parent',
   ];
-  protected selectedComposant: string = this.composants[6];
+  protected selectedComposant: string = this.composants[7];
 
   protected onAction(): void {
     this.message = `Bonjour ${this.username} !`;

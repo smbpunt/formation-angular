@@ -1,0 +1,8 @@
+<div class="carte-produit">
+  <h4>
+    {{ product().label }}
+  </h4>
+  <p>ref: {{ product().ref }}</p>
+  <p>prix: {{ product().price | currency:'EUR' }}</p>
+  <p class="categorie">catégorie: {{ product().category }}</p>
+</div>

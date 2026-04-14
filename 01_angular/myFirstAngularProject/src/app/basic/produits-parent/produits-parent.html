@@ -1,0 +1,6 @@
+<h3>Produits parent</h3>
+<p>Exemple de la direction '@ input' </p>
+
+@for (p of products; track p.ref) {
+  <app-produit-enfant [product]="p" />
+}

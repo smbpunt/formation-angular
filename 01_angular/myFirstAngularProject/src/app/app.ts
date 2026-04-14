@@ -8,5 +8,6 @@ import { Basic } from './basic/basic';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('myFirstAngularProject');
+  // protected readonly title = signal('Le titre de mon app Angular');
+  protected readonly title :string = 'Le titre de mon app Angular';
 }

@@ -1,0 +1,29 @@
+<h1>Articles</h1>
+
+<ul class="article-list">
+  @for (a of articles; track a.nom) {
+    <li class="article-list__item">
+      <app-article-enfant [article]="a.nom" (reaction)="handleReaction($event, a.nom)" />
+    </li>
+  }
+</ul>
+
+<h2>Récapitulatif</h2>
+<table class="recap">
+  <thead>
+    <tr>
+      <th scope="col">Article</th>
+      <th scope="col">Likes</th>
+      <th scope="col">Dislikes</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (a of articles; track a.nom) {
+      <tr>
+        <th scope="row">{{ a.nom }}</th>
+        <td class="recap__like">{{ a.like }}</td>
+        <td class="recap__dislike">{{ a.dislike }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

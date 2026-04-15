@@ -1,0 +1,21 @@
+<article class="card">
+  <p class="card__name">{{ article() }}</p>
+  <div class="card__actions">
+    <button
+      type="button"
+      class="card__btn card__btn--like"
+      (click)="reaction.emit('like')"
+      [attr.aria-label]="'Liker ' + article()"
+    >
+      👍 Like
+    </button>
+    <button
+      type="button"
+      class="card__btn card__btn--dislike"
+      (click)="reaction.emit('dislike')"
+      [attr.aria-label]="'Disliker ' + article()"
+    >
+      👎 Dislike
+    </button>
+  </div>
+</article>

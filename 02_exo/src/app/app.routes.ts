@@ -7,6 +7,7 @@ import { Bonjour } from './components/main/bonjour/bonjour';
 import { Rectangle } from './components/main/rectangle/rectangle';
 import { Toggler } from './components/main/toggler/toggler';
 import { Moyenne } from './components/main/moyenne/moyenne';
+import { ExoIo } from './components/main/exo-io/exo-io';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'rectangle', component: Rectangle },
   { path: 'toggler', component: Toggler },
   { path: 'moyenne', component: Moyenne },
+  { path: 'io', component: ExoIo },
 
   // 404 page not found ** => */*/*
   { path: '**', component: NotFound },

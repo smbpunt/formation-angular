@@ -1,0 +1,14 @@
+<h1>Todo</h1>
+
+
+<label>Tâche : </label>
+<input [(ngModel)]="inputTache">
+<button type="button" (click)="addTache()">add</button>
+
+<p>Nombre de tâches : {{ taches().length }}</p>
+<p>Nombre de tâches computed : {{ nbTache() }}</p>
+<ul>
+  @for (t of taches(); track $index) {
+    <li>{{ t }}</li>
+  }
+</ul>

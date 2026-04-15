@@ -1,0 +1,13 @@
+<article class="card" aria-label="Carte de visite">
+  <header class="card__header">
+    <span class="card__avatar" aria-hidden="true">{{ nom().charAt(0) }}</span>
+    <h2 class="card__name">{{ nom() }}</h2>
+  </header>
+
+  <dl class="card__body">
+    <div class="card__row">
+      <dt>Poste</dt>
+      <dd>{{ poste() }}</dd>
+    </div>
+  </dl>
+</article>

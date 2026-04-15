@@ -20,4 +20,8 @@ export class ProductRepository {
   public findAll(): IProduit[] {
     return this.products;
   }
+
+  public findByRef(ref: string): IProduit | null {
+    return this.products.find((p) => p.ref === ref) ?? null;
+  }
 }

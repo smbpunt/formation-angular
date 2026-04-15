@@ -1,0 +1,12 @@
+<h1>Toggler</h1>
+
+<button type="button" (click)="toggle()">
+  @if (isVisible) {
+    Masquer
+  } @else {
+    Afficher
+  }
+</button>
+@if (isVisible) {
+  <p>👋 Ce message est visible !</p>
+}

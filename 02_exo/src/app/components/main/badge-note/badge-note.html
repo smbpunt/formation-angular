@@ -1,0 +1,7 @@
+<h1>Badge Note</h1>
+
+<div class="list">
+  @for (un of userNotes; track un.prenom) {
+    <app-badge-note-detail [prenom]="un.prenom" [note]="un.note" />
+  }
+</div>

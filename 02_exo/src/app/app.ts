@@ -10,5 +10,5 @@ import { Footer } from './components/layout/footer/footer';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('02_exo');
+  protected readonly title = signal('Exo 2');
 }

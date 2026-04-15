@@ -1,14 +1,24 @@
 <header class="app-header">
   <div class="brand">{{ title() }}</div>
   <nav class="nav">
-    <a routerLink="/welcome">Home</a>
-    <a routerLink="/compteur">1.Compteur</a>
-    <a routerLink="/bonjour">2.Bonjour</a>
-    <a routerLink="/rectangle">3.Rectangle</a>
-    <a routerLink="/toggler">4.Toggler</a>
-    <a routerLink="/moyenne">5.Moyenne</a>
-    <a routerLink="/todo">6.Todo</a>
-    <a routerLink="/io">IO</a>
-    <a routerLink="/goodbye">Bye</a>
+    <div class="nav-row">
+      <a routerLink="/welcome">Home</a>
+      <a routerLink="/goodbye">Bye</a>
+      <a routerLink="/compteur">1.Compteur</a>
+      <a routerLink="/bonjour">2.Bonjour</a>
+      <a routerLink="/rectangle">3.Rectangle</a>
+      <a routerLink="/toggler">4.Toggler</a>
+      <a routerLink="/moyenne">5.Moyenne</a>
+      <a routerLink="/todo">6.Todo</a>
+    </div>
+    <div class="nav-row">
+      <!--    exo 2-->
+      <a routerLink="/carte-visite">1.Carte Visite</a>
+      <a routerLink="/badge-note">2.Badge Note</a>
+    </div>
+    <div class="nav-row">
+      <!--    autre exos-->
+      <a routerLink="/io">IO</a>
+    </div>
   </nav>
 </header>

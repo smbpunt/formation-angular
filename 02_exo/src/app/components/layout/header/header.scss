@@ -4,8 +4,9 @@
 
 .app-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 1.5rem;
   padding: 0.75rem 1.5rem;
   background: linear-gradient(90deg, #1e293b, #334155);
   color: #f8fafc;
@@ -19,7 +20,14 @@
 
 .nav {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  .nav-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
   a {
     color: #cbd5e1;

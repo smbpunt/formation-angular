@@ -1,0 +1,12 @@
+<h1>Boutique</h1>
+
+<div class="grid">
+  @for (p of produits; track p.nom) {
+    <app-produit [produit]="p" (ajouteAuPanier)="ajouteAuPanier($event)" />
+  }
+</div>
+
+<h2>Panier</h2>
+
+<p>Total : {{ total() }} €</p>
+<pre>{{ panier() | json }}</pre>

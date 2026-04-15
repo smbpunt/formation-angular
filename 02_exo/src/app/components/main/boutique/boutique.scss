@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  max-width: 60rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: stretch;
+}

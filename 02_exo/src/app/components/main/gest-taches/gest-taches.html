@@ -1,0 +1,9 @@
+<h1>Gestionnaire de tâches</h1>
+
+<div class="list">
+  @for (t of taches(); track t) {
+    <app-tache [tache]="t" (supprime)="deleteTache($event)" />
+  } @empty {
+    <p class="empty">Plus de tâches !!!</p>
+  }
+</div>

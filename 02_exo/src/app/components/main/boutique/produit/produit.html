@@ -1,0 +1,26 @@
+<article class="card" [class.card--rupture]="produit().stock === 0">
+  <h2 class="card__title">{{ produit().nom }}</h2>
+
+  <dl class="card__info">
+    <dt>Prix</dt>
+    <dd>{{ produit().prix | currency:'EUR' }}</dd>
+
+    <dt>Stock</dt>
+    <dd>
+      @if (produit().stock > 0) {
+        {{ produit().stock }}
+      } @else {
+        <span class="card__rupture">Rupture</span>
+      }
+    </dd>
+  </dl>
+
+  <button
+    class="card__btn"
+    type="button"
+    [disabled]="produit().stock === 0"
+    (click)="ajouteAuPanier.emit(produit())"
+  >
+    Ajouter au panier
+  </button>
+</article>

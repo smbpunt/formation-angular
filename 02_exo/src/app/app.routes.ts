@@ -14,6 +14,8 @@ import { BadgeNote } from './components/main/badge-note/badge-note';
 import { FicheContact } from './components/main/fiche-contact/fiche-contact';
 import { Alerte } from './components/main/alerte/alerte';
 import { Article } from './components/main/article/article';
+import { GestTaches } from './components/main/gest-taches/gest-taches';
+import { Boutique } from './components/main/boutique/boutique';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -31,6 +33,8 @@ export const routes: Routes = [
   { path: 'fiche-contact', component: FicheContact },
   { path: 'alerte', component: Alerte },
   { path: 'article', component: Article },
+  { path: 'gest-taches', component: GestTaches },
+  { path: 'boutique', component: Boutique },
 
   // 404 page not found ** => */*/*
   { path: '**', component: NotFound },

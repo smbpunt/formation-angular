@@ -1,0 +1,11 @@
+<div class="card">
+  <span class="card__label">{{ tache() }}</span>
+  <button
+    type="button"
+    class="card__remove"
+    [attr.aria-label]="'Supprimer la tâche ' + tache()"
+    (click)="supprime.emit(tache())"
+  >
+    <span aria-hidden="true">×</span>
+  </button>
+</div>

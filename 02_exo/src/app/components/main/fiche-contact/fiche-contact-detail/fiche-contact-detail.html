@@ -1,0 +1,21 @@
+<article class="card" aria-label="Fiche contact">
+  <header class="card__header">
+    <span class="card__avatar" aria-hidden="true">
+      {{ contact().prenom.charAt(0) }}{{ contact().nom.charAt(0) }}
+    </span>
+    <h2 class="card__name">{{ contact().prenom }} {{ contact().nom }}</h2>
+  </header>
+
+  <dl class="card__body">
+    <div class="card__row">
+      <dt>Email</dt>
+      <dd>
+        <a [href]="'mailto:' + contact().email">{{ contact().email }}</a>
+      </dd>
+    </div>
+    <div class="card__row">
+      <dt>Ville</dt>
+      <dd>{{ contact().ville }}</dd>
+    </div>
+  </dl>
+</article>

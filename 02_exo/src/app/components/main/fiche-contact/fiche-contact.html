@@ -1,0 +1,7 @@
+<h1>Fiche Contact</h1>
+
+<div class="list">
+  @for (c of contacts; track c.email) {
+    <app-fiche-contact-detail [contact]="c" />
+  }
+</div>

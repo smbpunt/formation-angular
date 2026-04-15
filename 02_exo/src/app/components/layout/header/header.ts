@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -6,7 +6,10 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
   title = input<string>();
+  isOpen = signal(false);
+  toggle() { this.isOpen.update(v => !v); }
 }

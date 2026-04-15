@@ -1,0 +1,23 @@
+<h1>Moyenne</h1>
+
+<div>
+  <label>Maths : </label>
+  <input type="number" [value]="noteMath()" (change)="updateMath($event)" min="0" max="20">
+</div>
+
+<div>
+  <label>Français : </label>
+  <input type="number" [value]="noteFrancais()" (change)="updateFrancais($event)" min="0" max="20">
+</div>
+
+<div>
+  <label>Histoire : </label>
+  <input type="number" [value]="noteHistoire()" (change)="updateHistoire($event)" min="0" max="20">
+</div>
+
+
+Maths : [{{ noteMath() }}] ; Français : [{{ noteFrancais() }}] ; Histoire : [{{ noteHistoire() }}]
+<br>
+Moyenne : {{ moyenne() }} / 20
+<br>
+Mention : {{ mention() }}

@@ -6,6 +6,7 @@ import { CompteurSimple } from './components/main/compteur-simple/compteur-simpl
 import { Bonjour } from './components/main/bonjour/bonjour';
 import { Rectangle } from './components/main/rectangle/rectangle';
 import { Toggler } from './components/main/toggler/toggler';
+import { Moyenne } from './components/main/moyenne/moyenne';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'bonjour', component: Bonjour },
   { path: 'rectangle', component: Rectangle },
   { path: 'toggler', component: Toggler },
+  { path: 'moyenne', component: Moyenne },
 
   // 404 page not found ** => */*/*
   { path: '**', component: NotFound },

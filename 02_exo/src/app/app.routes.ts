@@ -12,6 +12,7 @@ import { Todo } from './components/main/todo/todo';
 import { CarteVisite } from './components/main/carte-visite/carte-visite';
 import { BadgeNote } from './components/main/badge-note/badge-note';
 import { FicheContact } from './components/main/fiche-contact/fiche-contact';
+import { Alerte } from './components/main/alerte/alerte';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -27,6 +28,7 @@ export const routes: Routes = [
   { path: 'carte-visite', component: CarteVisite },
   { path: 'badge-note', component: BadgeNote },
   { path: 'fiche-contact', component: FicheContact },
+  { path: 'alerte', component: Alerte },
 
   // 404 page not found ** => */*/*
   { path: '**', component: NotFound },

@@ -1,0 +1,76 @@
+<h1>Formulaire User - ReactiveForms</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="userName">Username</label>
+    <input formControlName="userName" />
+    @let userName = form.get('userName');
+    @if (userName && userName.touched) {
+      @if (userName.hasError('required')) {
+        <span class="erreur">Champ requis.</span>
+      }
+      @if (userName.errors?.['minlength']) {
+        <span class="erreur">Minimum {{ userName.errors?.['minlength'].requiredLength }}
+          caractères (actuellement {{ userName.errors?.['minlength'].actualLength }}).</span>
+      }
+    }
+  </div>
+  <div>
+    <label for="firstName">firstName</label>
+    <input formControlName="firstName" />
+
+  </div>
+  <div>
+    <label for="lastName">lastName</label>
+    <input formControlName="lastName" />
+
+  </div>
+  <div>
+    <label for="email">email</label>
+    <input formControlName="email" />
+
+  </div>
+  <div>
+    <label for="newPassword">newPassword</label>
+    <input
+      formControlName="newPassword"
+      type="password" />
+  </div>
+  <div>
+    <label for="confirmPassword">confirmPassword</label>
+    <input
+      formControlName="confirmPassword"
+      type="password" />
+
+    @let confirmPwd = form.get('confirmPassword');
+    @if (confirmPwd && confirmPwd.touched && form.hasError('differentPassword')) {
+      <span class="erreur">Les mots de passe ne correspondent pas.</span>
+    }
+  </div>
+  <div>
+    <label>Roles</label>
+    <div formArrayName="roles">
+      <button type="button" (click)="addRole()">+</button>
+
+      @for (control of rolesArray.controls; track $index) {
+        <div>
+          <select [formControl]="control">
+            @for (r of roles; track r) {
+              <option [value]="r">{{ r }}</option>
+            }
+          </select>
+          <button type="button" (click)="removeRole($index)">-</button>
+        </div>
+      }
+
+    </div>
+  </div>
+  <div>
+
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+    <button type="reset" (click)="reset()">Reset</button>
+
+  </div>
+
+</form>
+
+

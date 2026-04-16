@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { ArticleEnfant } from './article-enfant/article-enfant';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-article',
-  imports: [ArticleEnfant, JsonPipe],
+  imports: [ArticleEnfant],
   templateUrl: './article.html',
   styleUrl: './article.scss',
 })

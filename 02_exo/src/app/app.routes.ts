@@ -16,6 +16,7 @@ import { Alerte } from './components/main/alerte/alerte';
 import { Article } from './components/main/article/article';
 import { GestTaches } from './components/main/gest-taches/gest-taches';
 import { Boutique } from './components/main/boutique/boutique';
+import { UserFormV1 } from './components/forms/user-form-v1/user-form-v1';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -35,6 +36,7 @@ export const routes: Routes = [
   { path: 'article', component: Article },
   { path: 'gest-taches', component: GestTaches },
   { path: 'boutique', component: Boutique },
+  { path: 'form-v1', component: UserFormV1 },
 
   // 404 page not found ** => */*/*
   { path: '**', component: NotFound },

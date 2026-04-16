@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { JsonPipe } from '@angular/common';
 import { FicheContactDetail } from './fiche-contact-detail/fiche-contact-detail';
 
 @Component({
   selector: 'app-fiche-contact',
-  imports: [JsonPipe, FicheContactDetail],
+  imports: [FicheContactDetail],
   templateUrl: './fiche-contact.html',
   styleUrl: './fiche-contact.scss',
 })

@@ -1,0 +1,132 @@
+<h1>Formulaire User - Template Driven</h1>
+<!--
+  TEMPLATE DRIVEN FORMS — VALIDATIONS DISPONIBLES
+  ================================================
+  Dans un formulaire template-driven, les validateurs s'ajoutent
+  directement comme des attributs HTML sur l'élément <input>.
+  Angular détecte ces attributs via les directives de FormsModule.
+
+  VALIDATEURS NATIFS (pas d'import supplémentaire) :
+  ───────────────────────────────────────────────────
+  required            → le champ ne doit pas être vide
+  minlength="n"       → longueur minimale de n caractères
+  maxlength="n"       → longueur maximale de n caractères
+  min="n"             → valeur numérique minimale  (type="number")
+  max="n"             → valeur numérique maximale  (type="number")
+  email               → format email valide (directive NgModel)
+  pattern="regex"     → valeur doit correspondre à l'expression régulière
+                        ex: pattern="[A-Za-z]+"  → lettres uniquement
+-->
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="userName">Username</label>
+    <input name="userName" [(ngModel)]="user.userName" required minlength="3" #userName="ngModel" />
+    @if (userName.touched) {
+
+      <!-- LIRE LES ERREURS dans le template :
+       ─────────────────────────────────
+       On crée une référence locale : #monChamp="ngModel"
+       Puis on accède à :
+         monChamp.invalid        → vrai si au moins une erreur
+         monChamp.valid          → vrai si toutes les règles passent
+         monChamp.touched        → vrai si l'utilisateur a quitté le champ
+         monChamp.dirty          → vrai si la valeur a changé
+         monChamp.pristine       → vrai si jamais modifié
+         monChamp.pending        → vrai si un async validator est en cours
+
+       Pour cibler une erreur précise :
+         monChamp.errors?.['required']
+         monChamp.errors?.['minlength']   → { actualLength, requiredLength }
+         monChamp.errors?.['maxlength']   → { actualLength, requiredLength }
+         monChamp.errors?.['email']
+         monChamp.errors?.['pattern']     → { requiredPattern, actualValue }
+         monChamp.errors?.['min']         → { min, actual }
+         monChamp.errors?.['max']         → { max, actual }
+      -->
+
+      @if (userName.errors?.['required']) {
+        <span class="erreur">Champ requis.</span>
+      }
+      @if (userName.errors?.['minlength']) {
+        <span class="erreur">Minimum {{ userName.errors?.['minlength'].requiredLength }}
+          caractères (actuellement {{ userName.errors?.['minlength'].actualLength }} ).</span>
+      }
+    }
+  </div>
+  <div>
+    <label for="firstName">firstName</label>
+    <input name="firstName" [(ngModel)]="user.firstName" required #firstName="ngModel" />
+    @if (firstName.invalid && firstName.touched) {
+      <span class="erreur">Champ invalide.</span>
+    }
+  </div>
+  <div>
+    <label for="lastName">lastName</label>
+    <input name="lastName" [(ngModel)]="user.lastName" required #lastName="ngModel" />
+    @if (lastName.invalid && lastName.touched) {
+      <span class="erreur">Champ invalide.</span>
+    }
+  </div>
+  <div>
+    <label for="email">email</label>
+    <input name="email" [(ngModel)]="user.email" required type="email" email #email="ngModel" />
+
+    @if (email.touched) {
+      @if (email.errors?.['required']) {
+        <span class="erreur">Champ requis.</span>
+      }
+      @if (email.errors?.['email']) {
+        <span class="erreur">Format email invalide.</span>
+      }
+    }
+  </div>
+  <div>
+    <label for="newPassword">newPassword</label>
+    <input
+      name="newPassword"
+      [(ngModel)]="user.newPassword"
+      type="password"
+      required
+      minlength="6"
+      #pwd="ngModel"
+      pattern="(?=.*\d).+" />
+    <!--
+    1 chiffres + 1 min + 1 maj + 6 caractères
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
+    -->
+
+    @if (pwd.touched) {
+      @if (pwd.errors?.['required']) {
+        <span class="erreur">Champ requis.</span>
+      }
+      @if (pwd.errors?.['pattern']) {
+        <span class="erreur">Format email invalide.</span>
+      }
+      @if (pwd.errors?.['minlength']) {
+        <span class="erreur">Minimum {{ pwd.errors?.['minlength'].requiredLength }}
+          caractères (actuellement {{ pwd.errors?.['minlength'].actualLength }} ).</span>
+      }
+    }
+  </div>
+  <div>
+    <label for="role">role</label>
+    <select name="role" [(ngModel)]="role">
+      @for (r of roles; track r) {
+        <option [value]="r">{{ r }}</option>
+      }
+    </select>
+  </div>
+  <div>
+    <!--
+      userForm.invalid : vrai si au moins un champ du formulaire est invalide.
+      userForm.valid   : vrai si tous les champs passent leurs validateurs.
+      userForm.pending : vrai si un async validator est en attente (non utilisé ici).
+    -->
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    <button type="reset" (click)="reset()">Reset</button>
+
+  </div>
+
+</form>
+
+

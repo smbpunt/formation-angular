@@ -1,0 +1,34 @@
+<h2>Mon Premier Observable</h2>
+
+<p class="intro">
+  Un <strong>Observable</strong> est un flux de données asynchrone.<br />
+  Il ne fait rien tant qu'on ne s'y abonne pas. <br />
+  Ici, <code>interval(1000)</code> émet un entier toutes les secondes.
+</p>
+
+<!-- ─────────────────────────────────────────────────────────
+  APPROCHE 1 — toSignal() : conversion Observable → Signal
+  Recommandée dans les composants Angular modernes (v16+).
+  L'abonnement est géré par Angular, pas besoin de cleanup manuel.
+──────────────────────────────────────────────────────────── -->
+<section class="bloc">
+  <h3>Approche 1 — <code>toSignal()</code></h3>
+  <p>Convertit l'Observable en Signal. On l'appelle comme une fonction : <code>timerSignal()</code>.</p>
+  <p class="valeur">{{ timerSignal() }}</p>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────
+  APPROCHE 2 — pipe async : abonnement direct dans le template
+  C'est l'approche classique (pré-signals). Le pipe gère lui-même
+  l'abonnement et le désabonnement quand le composant est détruit.
+  Chaque usage de "| async" crée un abonnement indépendant.
+──────────────────────────────────────────────────────────── -->
+<section class="bloc">
+  <h3>Approche 2 — pipe <code>async</code></h3>
+  <p>S'abonne directement dans le template. Affiche <code>null</code> avant le premier emit.</p>
+  <p class="valeur">{{ timer$ | async }}</p>
+</section>
+
+<!-- Note : les deux timers démarrent au même moment mais ont des
+     abonnements indépendants — c'est pourquoi ils peuvent différer d'1. -->
+<p class="hint">Ouvre la console pour voir les logs de l'abonnement manuel.</p>

@@ -1,0 +1,18 @@
+<h1>Observables</h1>
+
+<select [value]="selected()" (change)="onSelect($event)">
+  @for (view of views; track view.value) {
+    <option [value]="view.value">{{ view.label }}</option>
+  }
+</select>
+
+<hr />
+
+@switch (selected()) {
+  @case ('my-first-observable') {
+    <app-my-first-observable />
+  }
+  @case ('user-list-observable') {
+    <app-user-list-observable />
+  }
+}

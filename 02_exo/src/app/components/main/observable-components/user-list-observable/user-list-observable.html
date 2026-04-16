@@ -1,0 +1,16 @@
+<h2>Liste des utilisateurs</h2>
+
+<!-- undefined = réponse pas encore arrivée -->
+@if (users() === undefined) {
+  <p>Chargement...</p>
+} @else {
+  <ul class="user-list">
+    @for (user of users(); track user.id) {
+      <li class="user-card">
+        <strong>{{ user.name }}</strong>
+        <span>{{ user.email }}</span>
+        <span class="company">{{ user.company.name }}</span>
+      </li>
+    }
+  </ul>
+}

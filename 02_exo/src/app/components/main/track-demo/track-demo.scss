@@ -1,0 +1,75 @@
+.demo {
+  padding: 1.5rem;
+  font-family: sans-serif;
+}
+
+.hint {
+  background: #f0f4ff;
+  border-left: 4px solid #4a6cf7;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.5rem 1.25rem;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.columns {
+  display: flex;
+  gap: 2rem;
+}
+
+section {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.sub {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.name {
+  font-weight: bold;
+  width: 80px;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}

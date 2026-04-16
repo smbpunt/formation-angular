@@ -1,0 +1,40 @@
+<div class="demo">
+  <h2>Démo <code>track</code></h2>
+  <p class="hint">
+    Tape quelque chose dans les inputs, puis clique sur le bouton.<br>
+    Si l'input <strong>garde sa valeur</strong> → le nœud DOM a été <em>réutilisé</em>.<br>
+    Si l'input <strong>est vide</strong> → le nœud DOM a été <em>recréé</em>.
+  </p>
+
+  <button (click)="addUserAtStart()">Ajouter Charlie au début</button>
+
+  <div class="columns">
+    <!-- BONNE PRATIQUE : track par id unique -->
+    <section>
+      <h3>✅ <code>track user.id</code></h3>
+      <p class="sub">Chaque utilisateur est identifié par son <code>id</code>.</p>
+      <ul>
+        @for (user of users(); track user.id) {
+          <li>
+            <span class="name">{{ user.name }}</span>
+            <input placeholder="tape ici..." />
+          </li>
+        }
+      </ul>
+    </section>
+
+    <!-- MAUVAISE PRATIQUE : track par index -->
+    <section>
+      <h3>❌ <code>track $index</code></h3>
+      <p class="sub">Chaque position est identifiée par son index.</p>
+      <ul>
+        @for (user of users(); track $index) {
+          <li>
+            <span class="name">{{ user.name }}</span>
+            <input placeholder="tape ici..." />
+          </li>
+        }
+      </ul>
+    </section>
+  </div>
+</div>

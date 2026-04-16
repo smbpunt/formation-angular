@@ -1,0 +1,7 @@
+<h2>Exercice 2 — Slider de luminosité ⭐</h2>
+
+<mat-slider min="0" max="100" step="5">
+  <input matSliderThumb [value]="sliderValue" (valueChange)="sliderValue = $event">
+</mat-slider>
+
+<mat-icon aria-hidden="false" aria-label="Example home icon" [fontIcon]="brightness"></mat-icon>

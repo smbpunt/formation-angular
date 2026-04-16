@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {
   AbstractControl,
   FormArray,
@@ -6,13 +6,27 @@ import {
   FormGroup,
   ReactiveFormsModule,
   ValidationErrors,
-  Validators,
+  Validators
 } from '@angular/forms';
 import { Role } from '../../../model/Role';
+import { MatError, MatFormField, MatLabel, MatSuffix } from '@angular/material/form-field';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-user-form-v2',
-  imports: [ReactiveFormsModule],
+  imports: [
+    ReactiveFormsModule,
+    MatFormField,
+    MatLabel,
+    MatInput,
+    MatError,
+    MatSuffix,
+    MatIconButton,
+    MatIcon,
+    MatInput,
+  ],
   templateUrl: './user-form-v2.html',
   styleUrl: './user-form-v2.scss',
 })
@@ -46,11 +60,11 @@ export class UserFormV2 {
       confirmPassword: new FormControl('aaaaaa', []),
       roles: new FormArray<FormControl<Role | null>>([new FormControl<Role>(Role.User)]),
     },
-    [this.isConfirmPasswordValid, this.isNamesValid, this.emailHasPoint],
+    [this.isConfirmPasswordValid, this.isNamesValid],
   );
 
   protected onSubmit() {
-    console.log(this.form.value);
+    console.log('submit' + this.form.value);
   }
 
   protected reset() {
@@ -96,5 +110,11 @@ export class UserFormV2 {
 
   protected removeRole(index: number) {
     this.rolesArray.removeAt(index);
+  }
+
+  hide = signal(true);
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
   }
 }

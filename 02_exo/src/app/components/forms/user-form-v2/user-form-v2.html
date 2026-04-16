@@ -17,7 +17,6 @@
   <div>
     <label for="firstName">firstName</label>
     <input formControlName="firstName" />
-
   </div>
   <div>
     <label for="lastName">lastName</label>
@@ -29,12 +28,50 @@
     <input formControlName="email" />
 
   </div>
+
+
+  <mat-form-field>
+    <mat-label>Enter your email</mat-label>
+    <input
+      matInput
+      placeholder="pat@example.com"
+      formControlName="email"
+      required
+    />
+    @let email = form.get('email');
+    @if (email && email.invalid) {
+      @if (email.hasError('required')) {
+        <mat-error>Champ obligatoire.</mat-error>
+      } @else if (email.hasError('email')) {
+        <mat-error>Mauvais format.</mat-error>
+      }
+    }
+  </mat-form-field>
+
   <div>
     <label for="newPassword">newPassword</label>
     <input
       formControlName="newPassword"
       type="password" />
   </div>
+
+
+  <mat-form-field>
+    <mat-label>Enter your password</mat-label>
+    <input required matInput [type]="hide() ? 'password' : 'text'" />
+    <button
+      type="button"
+      matIconButton
+      matSuffix
+      (click)="clickEvent($event)"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide()"
+    >
+      <mat-icon>{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+  </mat-form-field>
+
+
   <div>
     <label for="confirmPassword">confirmPassword</label>
     <input

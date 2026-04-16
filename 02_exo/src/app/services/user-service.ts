@@ -9,5 +9,6 @@ export class UserService {
 
   saveUser(user: IUser) {
     this.users.push(user);
+    console.log(this.users);
   }
 }

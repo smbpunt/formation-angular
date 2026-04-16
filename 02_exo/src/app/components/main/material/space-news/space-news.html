@@ -1,5 +1,9 @@
 <h1>Space news</h1>
 
-@for (article of news; track article) {
-  <app-space-news-article [news]="article" />
-}
+<mat-grid-list [cols]="cols()" rowHeight="500px" gutterSize="16px">
+  @for (article of news; track article.id) {
+    <mat-grid-tile>
+      <app-space-news-article [news]="article" />
+    </mat-grid-tile>
+  }
+</mat-grid-list>

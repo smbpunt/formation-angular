@@ -1,0 +1,31 @@
+<mat-card>
+  <img mat-card-image [src]="news().image_url" [alt]="news().title" />
+
+  <mat-card-header>
+    <mat-card-title>{{ news().title }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ news().news_site }} · {{ news().published_at | date: 'mediumDate' }}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{ news().summary }}</p>
+
+    @if (news().authors.length > 0) {
+      <mat-chip-set>
+        @for (author of news().authors; track author.name) {
+          <mat-chip>{{ author.name }}</mat-chip>
+        }
+      </mat-chip-set>
+    }
+  </mat-card-content>
+
+  <mat-card-actions>
+    @if (news().featured) {
+      <mat-chip highlighted color="primary">À la une</mat-chip>
+    }
+    <a mat-button [href]="news().url" target="_blank" rel="noopener noreferrer">
+      Lire l'article
+    </a>
+  </mat-card-actions>
+</mat-card>

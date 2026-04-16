@@ -1,0 +1,18 @@
+<h1>Material</h1>
+
+<select [value]="selected()" (change)="onSelect($event)">
+  @for (view of views; track view.value) {
+    <option [value]="view.value">{{ view.label }}</option>
+  }
+</select>
+
+<hr />
+
+@switch (selected()) {
+  @case ('exo-button') {
+    <app-exo-button />
+  }
+  @case ('ex1-buttons') {
+    <app-ex1-buttons />
+  }
+}

@@ -1,6 +1,9 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="over">
     <mat-nav-list>
+      <a mat-list-item routerLink="/space-news" (click)="sidenav.close()">Space News</a>
+      <a mat-list-item routerLink="/exo-mat" (click)="sidenav.close()">Material</a>
+      <mat-divider />
       <a mat-list-item routerLink="/welcome" (click)="sidenav.close()">Home</a>
       <a mat-list-item routerLink="/goodbye" (click)="sidenav.close()">Bye</a>
       <a mat-list-item routerLink="/compteur" (click)="sidenav.close()">1. Compteur</a>
@@ -22,8 +25,6 @@
       <a mat-list-item routerLink="/form-v2" (click)="sidenav.close()">form v2</a>
       <a mat-list-item routerLink="/io" (click)="sidenav.close()">IO</a>
       <a mat-list-item routerLink="/track-demo" (click)="sidenav.close()">track demo</a>
-      <mat-divider />
-      <a mat-list-item routerLink="/space-news" (click)="sidenav.close()">Space News</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

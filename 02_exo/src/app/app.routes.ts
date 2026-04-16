@@ -20,6 +20,7 @@ import { UserFormV1 } from './components/forms/user-form-v1/user-form-v1';
 import { UserFormV2 } from './components/forms/user-form-v2/user-form-v2';
 import { TrackDemo } from './components/main/track-demo/track-demo';
 import { SpaceNews } from './components/main/material/space-news/space-news';
+import { ExoMaterial } from './components/main/exo-material/exo-material';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -43,6 +44,7 @@ export const routes: Routes = [
   { path: 'form-v2', component: UserFormV2 },
   { path: 'track-demo', component: TrackDemo },
   { path: 'space-news', component: SpaceNews },
+  { path: 'exo-mat', component: ExoMaterial },
 
   // 404 page not found ** => */*/*
   { path: '**', component: NotFound },

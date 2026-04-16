@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:material.angular.dev)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

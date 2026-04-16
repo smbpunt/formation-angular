@@ -17,6 +17,9 @@ import { Article } from './components/main/article/article';
 import { GestTaches } from './components/main/gest-taches/gest-taches';
 import { Boutique } from './components/main/boutique/boutique';
 import { UserFormV1 } from './components/forms/user-form-v1/user-form-v1';
+import { UserFormV2 } from './components/forms/user-form-v2/user-form-v2';
+import { TrackDemo } from './components/main/track-demo/track-demo';
+import { SpaceNews } from './components/main/material/space-news/space-news';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -37,6 +40,9 @@ export const routes: Routes = [
   { path: 'gest-taches', component: GestTaches },
   { path: 'boutique', component: Boutique },
   { path: 'form-v1', component: UserFormV1 },
+  { path: 'form-v2', component: UserFormV2 },
+  { path: 'track-demo', component: TrackDemo },
+  { path: 'space-news', component: SpaceNews },
 
   // 404 page not found ** => */*/*
   { path: '**', component: NotFound },

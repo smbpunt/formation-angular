@@ -1,5 +1,36 @@
-<app-header [title]="title()" />
-<main>
-  <router-outlet />
-</main>
-<app-footer />
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/welcome" (click)="sidenav.close()">Home</a>
+      <a mat-list-item routerLink="/goodbye" (click)="sidenav.close()">Bye</a>
+      <a mat-list-item routerLink="/compteur" (click)="sidenav.close()">1. Compteur</a>
+      <a mat-list-item routerLink="/bonjour" (click)="sidenav.close()">2. Bonjour</a>
+      <a mat-list-item routerLink="/rectangle" (click)="sidenav.close()">3. Rectangle</a>
+      <a mat-list-item routerLink="/toggler" (click)="sidenav.close()">4. Toggler</a>
+      <a mat-list-item routerLink="/moyenne" (click)="sidenav.close()">5. Moyenne</a>
+      <a mat-list-item routerLink="/todo" (click)="sidenav.close()">6. Todo</a>
+      <mat-divider />
+      <a mat-list-item routerLink="/carte-visite" (click)="sidenav.close()">1. Carte Visite</a>
+      <a mat-list-item routerLink="/badge-note" (click)="sidenav.close()">2. Badge Note</a>
+      <a mat-list-item routerLink="/fiche-contact" (click)="sidenav.close()">3. Fiche Contact</a>
+      <a mat-list-item routerLink="/alerte" (click)="sidenav.close()">5. Alerte</a>
+      <a mat-list-item routerLink="/article" (click)="sidenav.close()">7. Article</a>
+      <a mat-list-item routerLink="/gest-taches" (click)="sidenav.close()">9. Gest Tâches</a>
+      <a mat-list-item routerLink="/boutique" (click)="sidenav.close()">10. Boutique</a>
+      <mat-divider />
+      <a mat-list-item routerLink="/form-v1" (click)="sidenav.close()">form v1</a>
+      <a mat-list-item routerLink="/form-v2" (click)="sidenav.close()">form v2</a>
+      <a mat-list-item routerLink="/io" (click)="sidenav.close()">IO</a>
+      <a mat-list-item routerLink="/track-demo" (click)="sidenav.close()">track demo</a>
+      <mat-divider />
+      <a mat-list-item routerLink="/space-news" (click)="sidenav.close()">Space News</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header [title]="title()" (menuClick)="sidenav.toggle()" />
+    <main>
+      <router-outlet />
+    </main>
+    <app-footer />
+  </mat-sidenav-content>
+</mat-sidenav-container>

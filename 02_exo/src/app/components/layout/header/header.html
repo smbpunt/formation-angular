@@ -1,35 +1,6 @@
-<header class="app-header">
-  <div class="brand">{{ title() }}</div>
-  <div class="nav-wrapper">
-    <button class="nav-toggle" (click)="toggle()" [attr.aria-expanded]="isOpen()" aria-controls="nav-dropdown">
-      Menu
-    </button>
-    @if (isOpen()) {
-      <nav id="nav-dropdown" class="nav-dropdown">
-        <div class="nav-group">
-          <a routerLink="/welcome" (click)="toggle()">Home</a>
-          <a routerLink="/goodbye" (click)="toggle()">Bye</a>
-          <a routerLink="/compteur" (click)="toggle()">1. Compteur</a>
-          <a routerLink="/bonjour" (click)="toggle()">2. Bonjour</a>
-          <a routerLink="/rectangle" (click)="toggle()">3. Rectangle</a>
-          <a routerLink="/toggler" (click)="toggle()">4. Toggler</a>
-          <a routerLink="/moyenne" (click)="toggle()">5. Moyenne</a>
-          <a routerLink="/todo" (click)="toggle()">6. Todo</a>
-        </div>
-        <div class="nav-group">
-          <a routerLink="/carte-visite" (click)="toggle()">1. Carte Visite</a>
-          <a routerLink="/badge-note" (click)="toggle()">2. Badge Note</a>
-          <a routerLink="/fiche-contact" (click)="toggle()">3. Fiche Contact</a>
-          <a routerLink="/alerte" (click)="toggle()">5. Alerte</a>
-          <a routerLink="/article" (click)="toggle()">7. Article</a>
-          <a routerLink="/gest-taches" (click)="toggle()">9. Gest Tâches</a>
-          <a routerLink="/boutique" (click)="toggle()">10. Boutique</a>
-        </div>
-        <div class="nav-group">
-          <a routerLink="/form-v1" (click)="toggle()">form v1</a>
-          <a routerLink="/io" (click)="toggle()">IO</a>
-        </div>
-      </nav>
-    }
-  </div>
-</header>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="menuClick.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ title() }}</span>
+</mat-toolbar>
